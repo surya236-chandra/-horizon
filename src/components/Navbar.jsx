@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import monogram from '../assets/monogram.png';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,17 +79,27 @@ export default function Navbar() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
+            gap: '12px',
             textDecoration: 'none',
             color: '#ffffff',
             transition: 'opacity 0.3s ease'
           }}
         >
+          <img 
+            src={monogram} 
+            alt="Hashtag Horizon Monogram" 
+            style={{ 
+              height: '36px', 
+              width: 'auto',
+              display: 'block',
+              filter: 'drop-shadow(0 0 8px rgba(159, 63, 255, 0.4))'
+            }} 
+          />
           <span 
             style={{ 
               fontFamily: 'var(--font-sans)', 
               fontWeight: 600, 
-              fontSize: '22px', 
+              fontSize: '20px', 
               letterSpacing: '-0.03em' 
             }}
           >
