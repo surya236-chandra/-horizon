@@ -104,7 +104,6 @@ export default function FeaturedWork() {
                 onMouseEnter={() => setHoveredIdx(index)}
                 onMouseLeave={() => setHoveredIdx(null)}
                 style={{
-                  gridColumn: isLarge ? 'span 12' : 'auto',
                   display: 'flex',
                   flexDirection: 'column',
                   textDecoration: 'none',
@@ -122,7 +121,7 @@ export default function FeaturedWork() {
                 {/* Visual Area */}
                 <div 
                   style={{ 
-                    height: isLarge ? '500px' : '360px',
+                    height: isLarge ? 'clamp(240px, 35vw, 500px)' : 'clamp(200px, 28vw, 360px)',
                     width: '100%',
                     position: 'relative',
                     borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
@@ -199,12 +198,12 @@ export default function FeaturedWork() {
                 </div>
 
                 {/* Details Footer */}
-                <div style={{ padding: '40px' }}>
+                <div style={{ padding: 'clamp(20px, 4vw, 40px)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', gap: '20px' }}>
                     <div>
                       <h3 
                         style={{ 
-                          fontSize: '32px', 
+                          fontSize: 'clamp(22px, 2.5vw, 32px)', 
                           fontWeight: 500, 
                           color: '#ffffff',
                           letterSpacing: '-0.02em',
@@ -215,7 +214,7 @@ export default function FeaturedWork() {
                       </h3>
                       <p 
                         style={{ 
-                          fontSize: '15px', 
+                          fontSize: 'clamp(14px, 1.2vw, 15px)', 
                           color: 'var(--color-text-muted)', 
                           marginTop: '8px',
                           maxWidth: '640px',
@@ -306,7 +305,7 @@ export default function FeaturedWork() {
             </button>
 
             {/* Modal Image Header */}
-            <div style={{ width: '100%', height: '240px', position: 'relative', overflow: 'hidden' }}>
+            <div style={{ width: '100%', height: 'clamp(160px, 25vw, 240px)', position: 'relative', overflow: 'hidden' }}>
               <img 
                 src={selectedProject.imageUrl} 
                 alt={selectedProject.title} 
@@ -322,11 +321,11 @@ export default function FeaturedWork() {
             </div>
 
             {/* Content Body */}
-            <div style={{ padding: '36px 40px' }}>
+            <div style={{ padding: 'clamp(24px, 5vw, 40px)' }}>
               <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: selectedProject.color, textTransform: 'uppercase', letterSpacing: '0.12em' }}>
                 {selectedProject.category} // CASE STUDY
               </span>
-              <h3 style={{ fontSize: '32px', fontWeight: 500, color: '#ffffff', marginTop: '12px', letterSpacing: '-0.02em' }}>
+              <h3 style={{ fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 500, color: '#ffffff', marginTop: '12px', letterSpacing: '-0.02em' }}>
                 {selectedProject.title}
               </h3>
               <p style={{ fontSize: '15px', color: '#ffffff', marginTop: '12px', fontStyle: 'italic', opacity: 0.9 }}>
@@ -336,7 +335,7 @@ export default function FeaturedWork() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '20px', marginTop: '20px' }}>
                 {selectedProject.title === 'Solaria Campaign' && (
                   <>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="modal-grid">
                       <div>
                         <h4 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', marginBottom: '4px' }}>The Challenge</h4>
                         <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>Solaria required scaling user acquisition that had hit a plateau, resulting in rising customer acquisition costs (CAC).</p>
@@ -357,7 +356,7 @@ export default function FeaturedWork() {
 
                 {selectedProject.title === 'Kortex Systems' && (
                   <>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="modal-grid">
                       <div>
                         <h4 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', marginBottom: '4px' }}>The Challenge</h4>
                         <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>Kortex needed high-intent enterprise pipeline signups without overspending valuable sales representative prospecting hours.</p>
@@ -378,7 +377,7 @@ export default function FeaturedWork() {
 
                 {selectedProject.title === 'Vesper Commerce' && (
                   <>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <div className="modal-grid">
                       <div>
                         <h4 style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase', marginBottom: '4px' }}>The Challenge</h4>
                         <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>Impeded by heavy load times, their legacy storefront suffered from dropping cart completions and lost revenue.</p>
@@ -399,7 +398,7 @@ export default function FeaturedWork() {
               </div>
 
               {/* Action buttons inside Modal */}
-              <div style={{ marginTop: '36px', display: 'flex', gap: '12px' }}>
+              <div className="modal-actions-container" style={{ marginTop: '36px' }}>
                 <a 
                   href="#contact"
                   onClick={(e) => {
@@ -430,6 +429,27 @@ export default function FeaturedWork() {
       <style dangerouslySetInnerHTML={{__html: `
         .project-card:hover {
           border-color: rgba(255, 255, 255, 0.15) !important;
+        }
+        .modal-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+        .modal-actions-container {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+        }
+        @media (min-width: 480px) {
+          .modal-actions-container {
+            flex-direction: row;
+          }
+        }
+        @media (min-width: 600px) {
+          .modal-grid {
+            grid-template-columns: 1fr 1fr;
+          }
         }
         @keyframes scaleIn {
           from { opacity: 0; transform: scale(0.96); }
