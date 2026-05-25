@@ -159,20 +159,6 @@ export default function Navbar() {
           }}
           className="hidden md-flex"
         >
-          <a 
-            href="#contact" 
-            onClick={(e) => scrollToSection(e, 'contact')}
-            style={{ 
-              fontSize: '14px', 
-              color: 'rgba(255, 255, 255, 0.65)', 
-              textDecoration: 'none', 
-              transition: 'color 0.3s ease' 
-            }}
-            onMouseEnter={(e) => e.target.style.color = '#ffffff'}
-            onMouseLeave={(e) => e.target.style.color = 'rgba(255, 255, 255, 0.65)'}
-          >
-            Sign in
-          </a>
           <a
             href="#contact"
             onClick={(e) => scrollToSection(e, 'contact')}
