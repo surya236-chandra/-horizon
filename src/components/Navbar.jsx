@@ -96,9 +96,10 @@ export default function Navbar() {
             }} 
           />
           <span 
+            className="logo-text-gradient"
             style={{ 
               fontFamily: 'var(--font-sans)', 
-              fontWeight: 600, 
+              fontWeight: 700, 
               fontSize: '20px', 
               letterSpacing: '-0.03em' 
             }}
@@ -106,10 +107,11 @@ export default function Navbar() {
             HASHTAG HORIZON
           </span>
           <span 
+            className="logo-text-gradient"
             style={{ 
               fontFamily: 'var(--font-mono)', 
+              fontWeight: 700,
               fontSize: '9px', 
-              color: 'rgba(255, 255, 255, 0.4)', 
               marginTop: '4px' 
             }}
           >
@@ -288,6 +290,18 @@ export default function Navbar() {
         }
         .nav-link:hover .nav-link-line {
           width: 100%;
+        }
+        .logo-text-gradient {
+          background: linear-gradient(135deg, #9f3fff, #7b2cff, #2563ff, #00d2ff, #7b2cff, #9f3fff);
+          background-size: 300% 300%;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: logoGradient 8s ease infinite;
+        }
+        @keyframes logoGradient {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
       `}} />
     </header>
