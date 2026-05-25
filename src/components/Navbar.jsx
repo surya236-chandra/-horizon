@@ -89,10 +89,10 @@ export default function Navbar() {
             src={monogram} 
             alt="Hashtag Horizon Monogram" 
             style={{ 
-              height: '36px', 
+              height: '45px', 
               width: 'auto',
               display: 'block',
-              filter: 'drop-shadow(0 0 8px rgba(159, 63, 255, 0.4))'
+              filter: 'drop-shadow(0 0 10px rgba(159, 63, 255, 0.45))'
             }} 
           />
           <span 
