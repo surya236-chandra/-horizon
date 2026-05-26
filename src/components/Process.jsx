@@ -35,7 +35,7 @@ export default function Process() {
       id="about"
       style={{
         padding: '160px 24px',
-        backgroundColor: '#050508',
+        backgroundColor: '#000000',
         position: 'relative',
         overflow: 'hidden',
         borderBottom: '1px solid var(--border-color)'
@@ -86,34 +86,26 @@ export default function Process() {
             </h2>
           </div>
 
-          {/* Right Image Graphic (Vector Tree) */}
+          {/* Right Image Graphic (Bonsai Tree) */}
           <div 
             style={{
               position: 'relative',
-              height: '320px',
+              height: 'clamp(280px, 45vw, 550px)',
               overflow: 'hidden',
               display: 'flex',
               alignItems: 'flex-end',
-              justifyContent: 'center'
+              justifyContent: 'flex-end'
             }}
             className="process-image-container"
           >
             <img 
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/tree-uAia6REvB137CQyHFCf0za3O6h2zKO.png" 
-              alt="Network Tree" 
+              alt="Bonsai Tree" 
               style={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'contain',
-                objectPosition: 'bottom'
-              }}
-            />
-            {/* Fade to background */}
-            <div 
-              style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(to right, #050508 10%, transparent 60%)'
+                objectPosition: 'right bottom'
               }}
             />
           </div>
@@ -141,7 +133,9 @@ export default function Process() {
                   textAlign: 'left',
                   padding: '40px 32px',
                   border: '1px solid rgba(255, 255, 255, 0.07)',
-                  backgroundColor: '#000000',
+                  backgroundColor: 'rgba(11, 11, 11, 0.55)',
+                  backdropFilter: 'blur(16px)',
+                  WebkitBackdropFilter: 'blur(16px)',
                   color: '#ffffff',
                   cursor: 'pointer',
                   borderRadius: '20px',

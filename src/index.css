@@ -277,7 +277,7 @@ body {
   .lg-col-span-12 { grid-column: span 12 / span 12 !important; }
   .lg-block { display: block !important; }
   .process-image-container {
-    height: 450px !important;
+    height: clamp(280px, 45vw, 550px) !important;
   }
 }
 
@@ -361,5 +361,17 @@ body {
   animation: chandraGlow 4s infinite ease-in-out;
 }
 
+/* Global Logo Text Shifting Gradient */
+.logo-text-gradient {
+  background: linear-gradient(135deg, #9f3fff, #7b2cff, #2563ff, #00d2ff, #7b2cff, #9f3fff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: logoGradient 8s ease infinite;
+}
 
-
+@keyframes logoGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

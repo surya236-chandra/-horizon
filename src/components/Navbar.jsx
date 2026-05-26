@@ -277,18 +277,6 @@ export default function Navbar() {
         .nav-link:hover .nav-link-line {
           width: 100%;
         }
-        .logo-text-gradient {
-          background: linear-gradient(135deg, #9f3fff, #7b2cff, #2563ff, #00d2ff, #7b2cff, #9f3fff);
-          background-size: 300% 300%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: logoGradient 8s ease infinite;
-        }
-        @keyframes logoGradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
       `}} />
     </header>
   );

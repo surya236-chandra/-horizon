@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUp } from 'lucide-react';
+import monogram from '../assets/monogram.png';
 
 const TwitterIcon = ({ size = 16 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -63,17 +64,44 @@ export default function Footer() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                gap: '12px',
                 textDecoration: 'none',
                 color: '#ffffff',
-                fontWeight: 600,
-                fontSize: '20px',
-                letterSpacing: '-0.02em',
                 width: 'fit-content'
               }}
             >
-              <span>HASHTAG HORIZON</span>
-              <span style={{ fontSize: '9px', fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>TM</span>
+              <img 
+                src={monogram} 
+                alt="Hashtag Horizon Monogram" 
+                style={{ 
+                  height: '36px', 
+                  width: 'auto',
+                  display: 'block',
+                  filter: 'drop-shadow(0 0 8px rgba(159, 63, 255, 0.45))'
+                }} 
+              />
+              <span 
+                className="logo-text-gradient"
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontWeight: 700,
+                  fontSize: '20px',
+                  letterSpacing: '-0.02em'
+                }}
+              >
+                HASHTAG HORIZON
+              </span>
+              <span 
+                className="logo-text-gradient"
+                style={{ 
+                  fontFamily: 'var(--font-mono)', 
+                  fontWeight: 700,
+                  fontSize: '9px', 
+                  marginTop: '4px' 
+                }}
+              >
+                TM
+              </span>
             </a>
             <p style={{ fontSize: '14px', color: 'var(--color-text-muted)', maxWidth: '280px', lineHeight: 1.5 }}>
               Scaling Beyond Limits. Creating cinematic digital products, SaaS UI systems, and AI processes.
@@ -198,7 +226,7 @@ export default function Footer() {
             flexWrap: 'wrap',
             gap: '16px',
             fontSize: '11px',
-            color: 'rgba(255, 255, 255, 0.3)',
+            color: 'rgba(255, 255, 255, 0.5)',
             fontFamily: 'var(--font-mono)'
           }}
         >
