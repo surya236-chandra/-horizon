@@ -78,12 +78,20 @@ export default function Contact() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', fontSize: '13px', fontFamily: 'var(--font-mono)', color: 'rgba(255,255,255,0.4)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ color: 'var(--accent-blue)' }}>// EMAIL DIRECT</span>
-              <a href="mailto:hello@horizon.network" style={{ color: '#ffffff', textDecoration: 'none' }}>hello@horizon.network</a>
+              <span style={{ color: 'var(--accent-blue)', minWidth: '120px' }}>// EMAIL</span>
+              <a href="mailto:info@hashtaghorizon.in" style={{ color: '#ffffff', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-blue)'} onMouseLeave={(e) => e.target.style.color = '#ffffff'}>info@hashtaghorizon.in</a>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-              <span style={{ color: 'var(--accent-rose)' }}>// SILICON VALLEY</span>
-              <span style={{ color: '#ffffff' }}>Palo Alto, California</span>
+              <span style={{ color: 'var(--accent-rose)', minWidth: '120px' }}>// WHATSAPP</span>
+              <a href="https://wa.me/919235869319?text=Hi%20Hashtag%20Horizon%2C%20I%20would%20like%20to%20inquire%20about%20your%20services%20to%20scale%20our%20business." target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-rose)'} onMouseLeave={(e) => e.target.style.color = '#ffffff'}>+91 92358 69319</a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <span style={{ color: 'var(--accent-blue)', minWidth: '120px' }}>// INSTAGRAM</span>
+              <a href="https://www.instagram.com/hashtaghorizonofficial?igsh=YWQxb25qMW5sYzBv" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-blue)'} onMouseLeave={(e) => e.target.style.color = '#ffffff'}>@hashtaghorizonofficial</a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <span style={{ color: 'var(--accent-rose)', minWidth: '120px' }}>// LINKEDIN</span>
+              <a href="https://www.linkedin.com/in/hashtag-horizon-216799411?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'none', transition: 'color 0.2s ease' }} onMouseEnter={(e) => e.target.style.color = 'var(--accent-rose)'} onMouseLeave={(e) => e.target.style.color = '#ffffff'}>Hashtag Horizon</a>
             </div>
           </div>
         </div>
