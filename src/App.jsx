@@ -21,6 +21,7 @@ import FeaturedWork from './components/FeaturedWork';
 import Process from './components/Process';
 import Testimonials from './components/Testimonials';
 import CTA from './components/CTA';
+import Founder from './components/Founder';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -96,6 +97,7 @@ export default function App() {
       <Process />
       <Testimonials />
       <CTA />
+      <Founder />
       <Contact />
       <Footer />
 

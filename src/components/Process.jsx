@@ -32,7 +32,7 @@ export default function Process() {
 
   return (
     <section 
-      id="about"
+      id="process"
       style={{
         padding: '160px 24px',
         backgroundColor: '#000000',

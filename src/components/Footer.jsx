@@ -115,6 +115,14 @@ export default function Footer() {
             <p style={{ fontSize: '14px', color: 'var(--color-text-muted)', maxWidth: '280px', lineHeight: 1.5 }}>
               Scaling Beyond Limits. Creating cinematic digital products, SaaS UI systems, and AI processes.
             </p>
+            <div style={{ marginTop: '8px' }}>
+              <span style={{ fontSize: '9px', fontFamily: 'var(--font-mono)', color: 'var(--accent-rose)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '4px' }}>
+                // Office Address
+              </span>
+              <p style={{ fontSize: '13px', color: 'var(--color-text-muted)', maxWidth: '280px', lineHeight: 1.4 }}>
+                Near Barista Cafe, Omaxe, Vrindavan 281121
+              </p>
+            </div>
           </div>
 
           {/* Navigation Links column */}
