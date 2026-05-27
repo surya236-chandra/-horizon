@@ -72,7 +72,7 @@ export default function Process() {
             </span>
             <h2 
               style={{
-                fontSize: 'clamp(44px, 7vw, 110px)',
+                fontSize: 'clamp(32px, 7vw, 110px)',
                 fontWeight: 400,
                 lineHeight: 0.9,
                 letterSpacing: '-0.04em',

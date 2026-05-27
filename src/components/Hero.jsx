@@ -164,7 +164,7 @@ export default function Hero() {
           {/* Heading */}
           <h1 
             style={{
-              fontSize: 'clamp(44px, 8.5vw, 102px)',
+              fontSize: 'clamp(32px, 8.5vw, 102px)',
               fontWeight: 400,
               lineHeight: 0.9,
               letterSpacing: '-0.04em',
@@ -180,7 +180,7 @@ export default function Hero() {
             Beyond <span style={{ fontFamily: 'var(--font-serif)', fontStyle: 'italic', fontWeight: 'normal', color: 'var(--accent-rose)' }}>Limits</span>
             <span style={{ display: 'inline-block', marginLeft: '12px' }}>to</span>
             <br />
-            <span style={{ display: 'inline-block' }}>
+            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
               {currentWord.split("").map((char, index) => {
                 const colorIndex = (index + wordIndex) % colors.length;
                 return (

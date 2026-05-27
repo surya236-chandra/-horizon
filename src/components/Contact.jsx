@@ -53,7 +53,7 @@ export default function Contact() {
           </span>
           <h2 
             style={{
-              fontSize: 'clamp(36px, 5vw, 68px)',
+              fontSize: 'clamp(28px, 5vw, 68px)',
               fontWeight: 400,
               lineHeight: 1.05,
               letterSpacing: '-0.03em',

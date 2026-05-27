@@ -52,7 +52,7 @@ export default function Testimonials() {
           </span>
           <h2 
             style={{
-              fontSize: 'clamp(36px, 6vw, 76px)',
+              fontSize: 'clamp(28px, 6vw, 76px)',
               fontWeight: 400,
               lineHeight: 1.0,
               letterSpacing: '-0.03em',

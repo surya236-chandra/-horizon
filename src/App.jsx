@@ -76,7 +76,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ position: 'relative', width: '100%' }}>
+    <div style={{ position: 'relative', width: '100%', overflowX: 'hidden' }}>
       {/* Noise Film Overlay */}
       <div className="noise-overlay" />
 
