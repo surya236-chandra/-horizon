@@ -12,14 +12,7 @@ export default function Contact() {
     setIsSubmitting(true);
     setSubmitError(null);
 
-    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-
-    if (!accessKey) {
-      console.warn("VITE_WEB3FORMS_ACCESS_KEY is not configured in your .env file.");
-      setSubmitError("Form configuration missing. Please check VITE_WEB3FORMS_ACCESS_KEY in the environment.");
-      setIsSubmitting(false);
-      return;
-    }
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "6b69fb0f-a92a-414a-b76b-28050b61b3df";
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
