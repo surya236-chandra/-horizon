@@ -1,17 +1,56 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Send, CheckCircle } from 'lucide-react';
 
 export default function Contact() {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
   const [formData, setFormData] = useState({ name: '', email: '', project: '', details: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setFormData({ name: '', email: '', project: '', details: '' });
-    }, 5000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      console.warn("VITE_WEB3FORMS_ACCESS_KEY is not configured in your .env file.");
+      setSubmitError("Form configuration missing. Please check VITE_WEB3FORMS_ACCESS_KEY in the environment.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          email: formData.email,
+          subject: "New Project Inquiry - Hashtag Horizon",
+          from_name: "Hashtag Horizon Website",
+          project: formData.project,
+          details: formData.details
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setFormSubmitted(true);
+        setFormData({ name: '', email: '', project: '', details: '' });
+      } else {
+        setSubmitError(result.message || "Failed to submit. Please try again.");
+      }
+    } catch {
+      setSubmitError("An error occurred. Please check your network connection and try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -191,10 +230,27 @@ export default function Contact() {
                 <button 
                   type="submit" 
                   className="btn btn-primary"
-                  style={{ width: '100%', padding: '16px', gap: '8px', marginTop: '8px', background: '#ffffff', color: '#000000', fontWeight: 600 }}
+                  disabled={isSubmitting}
+                  style={{ 
+                    width: '100%', 
+                    padding: '16px', 
+                    gap: '8px', 
+                    marginTop: '8px', 
+                    background: '#ffffff', 
+                    color: '#000000', 
+                    fontWeight: 600,
+                    opacity: isSubmitting ? 0.7 : 1,
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer'
+                  }}
                 >
-                  Send Inquiry <Send size={13} />
+                  {isSubmitting ? "Sending Inquiry..." : "Send Inquiry"} {!isSubmitting && <Send size={13} />}
                 </button>
+
+                {submitError && (
+                  <div style={{ color: 'var(--accent-rose)', fontSize: '13px', backgroundColor: 'rgba(236, 168, 214, 0.07)', border: '1px solid rgba(236, 168, 214, 0.2)', padding: '12px 16px', borderRadius: '8px', marginTop: '12px', textAlign: 'center', fontFamily: 'var(--font-mono)' }}>
+                    {submitError}
+                  </div>
+                )}
               </form>
             )}
           </div>
